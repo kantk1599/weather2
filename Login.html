@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000000;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-container h1 {
+            margin-bottom: 20px;
+        }
+
+        .social-buttons {
+            margin-bottom: 20px;
+        }
+
+        .instagram-button,
+        .google-button {
+            display: block;
+            width: 83%;
+            padding: 20px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .instagram-button {
+            background-color: #7b1160;
+            color: white;
+        }
+
+        .google-button {
+            background-color: #fcff00;
+            color: black;
+        }
+
+        .login-form input {
+            display: block;
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+        }
+
+        .login-button {
+            background-color: #35424a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 25px;
+            cursor: pointer;
+        }
+        .home-button {
+            background-color: #0c0066;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 90px;
+            margin-top: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .forgot-password-link {
+            color: #35424a;
+            text-decoration: none;
+        }
+
+        .forgot-password-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+            <a href="Homepage.html" class="home-button"><i class="fas fa-home"></i> Home</a>
+            
+        <h1>Login</h1>
+        <div class="social-buttons">
+            <a href="https://www.instagram.com/" class="instagram-button">
+                <i class="fab fa-instagram"></i> Log in with Instagram
+            </a>
+            <a href="https://www.google.com/accounts/Login" class="google-button">
+                <i class="fab fa-google"></i> Log in with Google
+            </a>
+        </div>
+        <p>or</p>
+        <form class="login-form">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password"><br>
+            <a href="Search Page.html" class="login-button">Log In</a><br><br><br>
+        </form>
+        <a href="Forget Password.html" class="forgot-password-link">Forgot Password?</a>
+    </div>
+</body>
+</html>

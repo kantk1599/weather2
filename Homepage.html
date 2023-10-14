@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url("https://www.pixground.com/wp-content/uploads/2023/03/Mysterious-Black-Hole-AI-Generated-4K-Desktop-Wallpaper.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #35424a;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .weather-card {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        /* Reset button default styles */
+        button {
+          border: none;
+          background: none;
+          padding: 0;
+          cursor: pointer;
+        }
+
+        /* Style the action-button class */
+        .action-button {
+          display: inline-block;
+          background-color: #007bff;
+          color: #ffffff;
+          border: none;
+          border-radius: 4px;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+        }
+
+        /* Change button background color on hover */
+        .action-button:hover {
+          background-color: #0056b3;
+        }
+
+        /* Style the <a> tag inside the button */
+        .action-button a {
+          color: #ffffff;
+          text-decoration: none;
+          margin-left: 10px;
+        }
+
+        /* Style the Font Awesome icon */
+        .action-button i {
+          margin-right: 5px;
+        }
+
+        footer {
+            background-color: #35424a;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-cloud-sun"></i> Weather Forecast</h1>
+        <nav>
+            <ul>
+                <li><a href="Homepage.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="Login.html"><i class="fas fa-sign-in-alt"></i> Log In</a></li>
+                <li><a href="About Us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="weather-card">
+            <h2>Welcome to the Weather Forecast</h2>
+            <p>Get accurate weather predictions for your area and stay prepared!</p>
+            <p>Please log in or sign up to access the weather forecast.</p>
+            <button class="action-button">
+                <i class="fas fa-sign-in-alt"></i>
+                <a href="Login.html">Log In</a>
+            </button>
+            <button class="action-button">
+                <i class="fas fa-user-plus"></i>
+                <a href="Sign Up.html">Sign Up</a>
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <h2><i class="fas fa-cloud-sun"></i> VT Weather Forecast</h2>
+        <p>&copy; 2023 VT Weather Forecast. All rights reserved.</p>
+    </footer>
+</body>
+</html>

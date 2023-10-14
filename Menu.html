@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url("https://www.pixground.com/wp-content/uploads/2023/03/Mysterious-Black-Hole-AI-Generated-4K-Desktop-Wallpaper.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #35424a;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .weather-card {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        /* Reset button default styles */
+        button {
+          border: none;
+          background: none;
+          padding: 0;
+          cursor: pointer;
+        }
+
+        /* Style the action-button class */
+        .action-button {
+          display: inline-block;
+          background-color: #007bff;
+          color: #ffffff;
+          border: none;
+          border-radius: 4px;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+        }
+
+        /* Change button background color on hover */
+        .action-button:hover {
+          background-color: #0056b3;
+        }
+
+        /* Style the <a> tag inside the button */
+        .action-button a {
+          color: #ffffff;
+          text-decoration: none;
+          margin-left: 10px;
+        }
+
+        /* Style the Font Awesome icon */
+        .action-button i {
+          margin-right: 5px;
+        }
+
+        footer {
+            background-color: #35424a;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+  }
+
+  .container {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 400px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #04AA6D;
+    box-shadow: 0px 0px 5px rgba(4, 170, 109, 0.4);
+  }
+
+  .checkbox-label {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  p {
+    text-align: center;
+    margin-top: 10px;
+    color: #666;
+  }
+
+  a {
+    color: dodgerblue;
+    text-decoration: none;
+  }
+
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .cancelbtn, .signupbtn {
+    float: left;
+    width: 25%;
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .signupbtn {
+    float: left;
+    width: 25%;
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .cancelbtn:hover, .signupbtn:hover {
+    background-color: #045A3E;
+  }body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #444;
+}
+
+.cssload-main {
+    position: absolute;
+    content: '';
+    left: 50%;
+    transform: translate(-100%, -240%);
+    -o-transform: translate(-100%, -240%);
+    -ms-transform: translate(-100%, -240%);
+    -webkit-transform: translate(-100%, -240%);
+    -moz-transform: translate(-100%, -240%);
+  }
+  
+  .cssload-main * {
+    font-size: 62px;
+  }
+  
+  .cssload-heart {
+    animation: cssload-heart 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -o-animation: cssload-heart 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -ms-animation: cssload-heart 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -webkit-animation: cssload-heart 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -moz-animation: cssload-heart 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    top: 50%;
+    content: '';
+    left: 50%;
+    position: absolute;
+  }
+  
+  .cssload-heartL {
+    width: 1em;
+    height: 1em;
+    border: 1px solid rgb(248, 36, 36);
+    background-color: rgb(248, 36, 36);
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: 100%;
+    animation: cssload-heartL 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -o-animation: cssload-heartL 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -ms-animation: cssload-heartL 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -webkit-animation: cssload-heartL 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -moz-animation: cssload-heartL 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    transform: translate(-28px, -27px);
+    -o-transform: translate(-28px, -27px);
+    -ms-transform: translate(-28px, -27px);
+    -webkit-transform: translate(-28px, -27px);
+    -moz-transform: translate(-28px, -27px);
+  }
+  
+  .cssload-heartR {
+    width: 1em;
+    height: 1em;
+    border: 1px solid rgb(248, 36, 36);
+    background-color: rgb(248, 36, 36);
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: 100%;
+    transform: translate(28px, -27px);
+    -o-transform: translate(28px, -27px);
+    -ms-transform: translate(28px, -27px);
+    -webkit-transform: translate(28px, -27px);
+    -moz-transform: translate(28px, -27px);
+    animation: cssload-heartR 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -o-animation: cssload-heartR 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -ms-animation: cssload-heartR 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -webkit-animation: cssload-heartR 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -moz-animation: cssload-heartR 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+  }
+  
+  .cssload-square {
+    width: 1em;
+    height: 1em;
+    border: 1px solid rgb(248, 36, 36);
+    background-color: rgb(248, 36, 36);
+    position: relative;
+    display: block;
+    content: '';
+    transform: scale(1) rotate(-45deg);
+    -o-transform: scale(1) rotate(-45deg);
+    -ms-transform: scale(1) rotate(-45deg);
+    -webkit-transform: scale(1) rotate(-45deg);
+    -moz-transform: scale(1) rotate(-45deg);
+    animation: cssload-square 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -o-animation: cssload-square 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -ms-animation: cssload-square 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -webkit-animation: cssload-square 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -moz-animation: cssload-square 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+  }
+  
+  .cssload-shadow {
+    top: 97px;
+    left: 50%;
+    content: '';
+    position: relative;
+    display: block;
+    bottom: -.5em;
+    width: 1em;
+    height: .24em;
+    background-color: rgb(215,215,215);
+    border: 1px solid rgb(215,215,215);
+    border-radius: 50%;
+    animation: cssload-shadow 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -o-animation: cssload-shadow 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -ms-animation: cssload-shadow 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -webkit-animation: cssload-shadow 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+    -moz-animation: cssload-shadow 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+  }
+  
+  @keyframes cssload-square {
+    50% {
+      border-radius: 100%;
+      transform: scale(0.5) rotate(-45deg);
+    }
+  
+    100% {
+      transform: scale(1) rotate(-45deg);
+    }
+  }
+  
+  @-o-keyframes cssload-square {
+    50% {
+      border-radius: 100%;
+      -o-transform: scale(0.5) rotate(-45deg);
+    }
+  
+    100% {
+      -o-transform: scale(1) rotate(-45deg);
+    }
+  }
+  
+  @-ms-keyframes cssload-square {
+    50% {
+      border-radius: 100%;
+      -ms-transform: scale(0.5) rotate(-45deg);
+    }
+  
+    100% {
+      -ms-transform: scale(1) rotate(-45deg);
+    }
+  }
+  
+  @-webkit-keyframes cssload-square {
+    50% {
+      border-radius: 100%;
+      -webkit-transform: scale(0.5) rotate(-45deg);
+    }
+  
+    100% {
+      -webkit-transform: scale(1) rotate(-45deg);
+    }
+  }
+  
+  @-moz-keyframes cssload-square {
+    50% {
+      border-radius: 100%;
+      -moz-transform: scale(0.5) rotate(-45deg);
+    }
+  
+    100% {
+      -moz-transform: scale(1) rotate(-45deg);
+    }
+  }
+  
+  @keyframes cssload-heart {
+    50% {
+      transform: rotate(360deg);
+    }
+  
+    100% {
+      transform: rotate(720deg);
+    }
+  }
+  
+  @-o-keyframes cssload-heart {
+    50% {
+      -o-transform: rotate(360deg);
+    }
+  
+    100% {
+      -o-transform: rotate(720deg);
+    }
+  }
+  
+  @-ms-keyframes cssload-heart {
+    50% {
+      -ms-transform: rotate(360deg);
+    }
+  
+    100% {
+      -ms-transform: rotate(720deg);
+    }
+  }
+  
+  @-webkit-keyframes cssload-heart {
+    50% {
+      -webkit-transform: rotate(360deg);
+    }
+  
+    100% {
+      -webkit-transform: rotate(720deg);
+    }
+  }
+  
+  @-moz-keyframes cssload-heart {
+    50% {
+      -moz-transform: rotate(360deg);
+    }
+  
+    100% {
+      -moz-transform: rotate(720deg);
+    }
+  }
+  
+  @keyframes cssload-heartL {
+    60% {
+      transform: scale(0.4);
+    }
+  }
+  
+  @-o-keyframes cssload-heartL {
+    60% {
+      -o-transform: scale(0.4);
+    }
+  }
+  
+  @-ms-keyframes cssload-heartL {
+    60% {
+      -ms-transform: scale(0.4);
+    }
+  }
+  
+  @-webkit-keyframes cssload-heartL {
+    60% {
+      -webkit-transform: scale(0.4);
+    }
+  }
+  
+  @-moz-keyframes cssload-heartL {
+    60% {
+      -moz-transform: scale(0.4);
+    }
+  }
+  
+  @keyframes cssload-heartR {
+    40% {
+      transform: scale(0.4);
+    }
+  }
+  
+  @-o-keyframes cssload-heartR {
+    40% {
+      -o-transform: scale(0.4);
+    }
+  }
+  
+  @-ms-keyframes cssload-heartR {
+    40% {
+      -ms-transform: scale(0.4);
+    }
+  }
+  
+  @-webkit-keyframes cssload-heartR {
+    40% {
+      -webkit-transform: scale(0.4);
+    }
+  }
+  
+  @-moz-keyframes cssload-heartR {
+    40% {
+      -moz-transform: scale(0.4);
+    }
+  }
+  
+  @keyframes cssload-shadow {
+    50% {
+      transform: scale(0.5);
+      border-color: rgb(228,228,228);
+    }
+  }
+  
+  @-o-keyframes cssload-shadow {
+    50% {
+      -o-transform: scale(0.5);
+      border-color: rgb(228,228,228);
+    }
+  }
+  
+  @-ms-keyframes cssload-shadow {
+    50% {
+      -ms-transform: scale(0.5);
+      border-color: rgb(228,228,228);
+    }
+  }
+  
+  @-webkit-keyframes cssload-shadow {
+    50% {
+      -webkit-transform: scale(0.5);
+      border-color: rgb(228,228,228);
+    }
+  }
+  
+  @-moz-keyframes cssload-shadow {
+    50% {
+      -moz-transform: scale(0.5);
+      border-color: rgb(228,228,228);
+    }
+  }/* Additional CSS styles from the second snippet */
+        /* ... */
+
+        /* Additional CSS styles from the third snippet */
+        /* ... */
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Your header content -->
+        <!-- ... -->
+        <h1><i class="fas fa-cloud-sun"></i> Weather Forecast</h1>
+        <nav>
+            <ul>
+                <li><a href="Homepage.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="Login.html"><i class="fas fa-sign-in-alt"></i> Log In</a></li>
+                <li><a href="About Us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="weather-card">
+            <!-- Your weather card content -->
+            <!-- ... -->
+            <h2>Welcome to the Weather Forecast</h2>
+            <p>Get accurate weather predictions for your area and stay prepared!</p>
+            <p>Please log in or sign up to access the weather forecast.</p>
+            <button class="action-button">
+                <i class="fas fa-sign-in-alt"></i>
+                <a href="Login.html">Log In</a>
+            </button>
+            <button class="action-button">
+                <i class="fas fa-user-plus"></i>
+                <a href="Sign Up.html">Sign Up</a>
+            </button>
+        
+        </div>
+    </div>
+    <!-- The loading animation -->
+    <div class="cssload-main">
+        <div class="cssload-heart">
+            <span class="cssload-heartL"></span>
+            <span class="cssload-heartR"></span>
+            <span class="cssload-square"></span>
+        </div>
+        <div class="cssload-shadow"></div>
+    </div>
+    <footer>
+        <!-- Your footer content -->
+        <!-- ... -->
+    </footer>
+</body>
+</html>
